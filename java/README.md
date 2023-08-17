@@ -1,4 +1,8 @@
 # 书单
++ [Java开发者技术书籍大全](https://github.com/sorenduan/awesome-java-books)
+
+## github 博客
++ [Java工程师面试复习指南](https://github.com/h2pl/JavaTutorial)
 
 # java 基础
 
