@@ -12,8 +12,9 @@
 ### 算法题解
 + [代码随想录](https://www.programmercarl.com/)
 + [labuladong 的算法小抄](https://labuladong.github.io/algo/)
++ [leetcode题解](https://github.com/azl397985856/leetcode)
 
-## 刷
+## 刷知识点
 + [阿秀的学习笔记](https://interviewguide.cn/)
 + [CS-Notes](http://www.cyc2018.xyz/)
 + [小林 x 图解计算机基础](https://xiaolincoding.com/)
@@ -42,9 +43,7 @@
 
 ## linux
 + [WuJing's Blog https://realwujing.github.io/](https://github.com/realwujing/realwujing.github.io)
-
-## 数据库
-+ [](https://github.com/oceanbase/miniob)
++ [Linux Kernel Teaching](https://linux-kernel-labs.github.io/refs/heads/master/index.html)
 
 ## github
 + [序员海外工作/英文面试手册](https://github.com/eliaszon/Programmers-Overseas-Job-Interview-Handbook)
@@ -53,9 +52,21 @@
 ## gitee
 + [收纳操作系统、JAVA、算法、数据库、中间件、解决方案、架构、DevOps和大数据等技术栈总结！](https://gitee.com/yu120/lemon-guide)
 
+
+# 项目
+
+## c++
++ [High performance IO scheduler implemented by C++](https://github.com/Yanbinyin/IOCoroutineScheduler)
++ [MiniOB is one mini database, helping developers to learn how database works](https://github.com/oceanbase/miniob)
+
+## linux
++ [庖丁解牛Linux操作系统分析](https://github.com/mengning/linuxkernel)
+
+# 其他文章
++ [程序员学习之路](https://abelsu7.top/2018/09/21/how-to-learn-coding/)
+
 ## 秋招经验
 + [2020 届互联网春招实习汇总 (2019年春)](https://abelsu7.top/2019/02/16/2019-spring-offer/)
 + [2020 届互联网秋季校园招聘汇总 (2019年秋)](https://abelsu7.top/2019/07/28/2019-autumn-offer/)
 
-## 文章
-+ [程序员学习之路](https://abelsu7.top/2018/09/21/how-to-learn-coding/)
+
