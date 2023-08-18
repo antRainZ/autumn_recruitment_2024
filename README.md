@@ -31,9 +31,6 @@
 + [javaguide](https://javaguide.cn/)
 + [帅地玩编程](https://www.iamshuaidi.com/)
 
-## java 八股文
-+ [Java面试小抄](https://github.com/cosen1024/Java-Interview)
-
 ## C/C++ 八股文
 + [学习C & C++ & python&汇编语言 LLVM编译器 数据结构 算法 操作系统 单片机 linux 面试](https://github.com/Ewenwan/ShiYanLou/)
 

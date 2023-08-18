@@ -37,6 +37,13 @@ native	strictfp	transient	volatile	assert
 
 byte,short,char之间不会相互转换，他们三者在计算时首先转换为int类型 —> long -> float -> double
 
+strictfp（strict floating-point）： 并不常见，通常用于修饰一个方法，用于限制浮点数计算的精度和舍入行为。在类、接口或方法上使用 strictfp 时，该范围内的所有浮点数计算将遵循 IEEE 754 标准的规定，以确保跨平台的浮点数计算的一致性
+
+transient： 修饰的字段不会被序列化
+volatile： 保证不同线程对它修饰的变量进行操作时的可见性
+
+变量可以分为局部变量、成员变量、静态变量
+
 ### static
 static标记的变量或方法由整个类(所有实例)共享，如访问控制权限允许，可不必创建该类对象而直接用类名加‘.’调用。
 static成员也称类成员或静态成员，如：类变量、类方法、静态方法等。
@@ -76,6 +83,12 @@ int [3][2] intArray1 = {{1,2},{2,3},{4,5}};
 # 面向对象
 类是对一类事物描述，是抽象的、概念上的定义；对象是实际存在的该类事物的每个个体，因而也称实例(instance)
 
+封装有 4 大好处：
++ 良好的封装能够减少耦合
++ 类内部的结构可以自由修改
++ 可以对成员进行更精确的控制
++ 隐藏信息，实现细节
+
 Java 重写(Override)
 + 参数列表必须完全相同
 + 返回类型与被重写方法的返回类型可以不相同，但是必须是父类返回值的派生类
@@ -90,24 +103,52 @@ Java 重写(Override)
 < modifier> class < name> [extends < superclass>] [implements < interface> [,< interface>]* ] {
     < declarations>*
 }
+
+//  用于判断对象是否属于某个类型
+p instanceof Person
 ```
 
+## 方法
+
+```java
+public static void print(String... strs) {
+    for (String s : strs)
+        System.out.println(s);
+}
+```
+
+## 代码初始化块
+静态初始化块在类加载时执行，只会执行一次，并且优先于实例初始化块和构造方法的执行；实例初始化块在每次创建对象时执行，在构造方法之前执行
 
 ## 多态
+同一个类的对象在不同情况下表现出不同的行为和状态
+
 1.多态是方法的多态，不是属性的多态（多态与属性无关）
 2.多态存在要有3个必要条件：继承、方法重写、父类引用指向子类对象。
 3.父类引用指向子类对象后，用该父类引用调用子类重写的方法，此时多态就出现了。
 
 # 接口
 接口(interface)是抽象方法和常量值的定义的集合
++ 接口中的所有成员变量都默认是由 `public static final` 修饰的
++ 没有使用 private、default 或者 static 关键字修饰的方法是隐式抽象的, 默认 `public abstract` 修饰的。接口没有构造方法
++ 实现接口的类中必须提供接口中所有方法的具体实现内容
++ 多个无关的类可以实现同一个接口
++ 一个类可以实现多个无关的接口
++ 与继承关系类似，接口与实现类之间存在多态性
++ 接口也可以继承另一个接口，使用extends
 
-接口中的所有成员变量都默认是由 `public static final` 修饰的
-接口中的所有方法都默认是由 `public abstract` 修饰的。接口没有构造方法
-实现接口的类中必须提供接口中所有方法的具体实现内容
-多个无关的类可以实现同一个接口
-一个类可以实现多个无关的接口
-与继承关系类似，接口与实现类之间存在多态性
-接口也可以继承另一个接口，使用extends
+```java
+public interface Test {
+    String a = "a";
+    // 抽象方法
+    string get();
+    // 静态方法
+    static boolean func1(String a) { return true;  }
+    // 默认方法
+    default void func2() { System.out.println(a);}
+}
+
+```
 
 # 内部类
 在Java中，允许一个类的定义位于另一个类的内部，前者称为内部类, 内部类和外层封装它的类之间存在逻辑上的所属关系
@@ -261,46 +302,91 @@ public void readFile(String file)  throws FileNotFoundException {}
 throw new String("java");
 ```
 
-# 集合
-Java 集合可分为 Set、List 和 Map 三种体系
-+ Set：无序、不可重复的集合
-+ List：有序，可重复的集合
-+ Map：具有映射关系的集合
-
-Collection 接口的接口 对象的集合（单列集合）
-├——-List 接口：元素按进入先后有序保存，可重复
-│—————-├ LinkedList 接口实现类， 链表， 插入删除， 没有同步， 线程不安全
-│—————-├ ArrayList 接口实现类， 数组， 随机访问， 没有同步， 线程不安全
-│—————-└ Vector 接口实现类 数组， 同步， 线程安全
-│ ———————-└ Stack 是Vector类的实现类
-└——-Set 接口： 仅接收一次，不可重复，并做内部排序
-├—————-└HashSet 使用hash表（数组）存储元素
-│————————└ LinkedHashSet 链表维护元素的插入次序
-└ —————-TreeSet 底层实现为二叉树，元素排好序
-
-Map 接口 键值对的集合 （双列集合）
-├———Hashtable 接口实现类， 同步， 线程安全
-├———HashMap 接口实现类 ，没有同步， 线程不安全-
-│—————–├ LinkedHashMap 双向链表和哈希表实现
-│—————–└ WeakHashMap
-├ ——–TreeMap 红黑树对所有的key进行排序
-└———IdentifyHashMap
-
-Iterator 接口主要用于遍历 Collection 集合中的元素，Iterator 对象也被称为迭代器
-
-# 泛型
-
 # 枚举
 使用 enum 定义的枚举类默认继承了 java.lang.Enum 类
 枚举类的构造器只能使用 private 访问控制符
 枚举类的所有实例必须在枚举类中显式列出(, 分隔    ; 结尾). 列出的实例系统会自动添加 public static final 修饰
 所有的枚举类都提供了一个 values 方法, 该方法可以很方便地遍历所有的枚举值
 
+```java
+public enum Type {
+    TYPE("TYPE"),
+    FIELD("FIELD");
+    private String name;
+    PlayerType(String name) {
+        this.name = name;
+    }
+}
+```
+
 # 注解
 Annotation 其实就是代码里的特殊标记, 这些标记可以在编译, 类加载, 运行时被读取, 并执行相应的处理.
-Annotation 可以像修饰符一样被使用, 可用于修饰包,类, 构造器, 方法, 成员变量, 参数, 局部变量的声明
+Annotation 可以像修饰符一样被使用, 可用于修饰 包,类, 构造器, 方法, 成员变量, 参数, 局部变量的声明
 
 三个基本的 Annotation:
 + `@Override`: 限定重写父类方法, 该注释只能用于方法
 + `@Deprecated`: 用于表示某个程序元素(类, 方法等)已过时
-+ `@SuppressWarnings`: 抑制编译器警告.
++ `@SuppressWarnings`: 抑制编译器警告
+
+注解的生命周期:
++ SOURCE：在源文件中有效，被编译器丢弃
++ CLASS：在编译器生成的字节码文件中有效，但在运行时会被处理类文件的 JVM 丢弃
++ RUNTIME：在运行时有效。它允许程序通过反射的方式访问注解，并根据注解的定义执行相应的代码
+
+ElementType 11 种: 
++ `TYPE`：用于类、接口、注解、枚举
++ `FIELD`：用于字段（类的成员变量），或者枚举常量
++ `METHOD`：用于方法
++ `PARAMETER`：用于普通方法或者构造方法的参数
++ `CONSTRUCTOR`：用于构造方法
++ `LOCAL_VARIABLE`：用于变量
++ `ANNOTATION_TYPE`：用于注解
++ `PACKAGE`：用于包
++ `TYPE_PARAMETER`：用于泛型参数
++ `TYPE_USE`：用于声明语句、泛型或者强制转换语句中的类型
++ `MODULE`：用于模块
+
+```java
+@Retention(RetentionPolicy.RUNTIME)
+@Target(ElementType.FIELD)
+public @interface JsonField {
+    public String value() default "";
+}
+
+```
+
+# 常用类
+
+## 包装类
+Integer Character
+常量缓存池: `Integer.valueOf();` Byte、Short、Integer、Long(-128~127), Character(\u0000 - \u007F) Boolean：true 和 false
+
+```java
+public static Integer valueOf(int i) {
+    if (i >=IntegerCache.low && i <=IntegerCache.high)
+        return IntegerCache.cache[i + (-IntegerCache.low)];
+    return new Integer(i);
+}
+```
+
+# JNI
+Java Native Interface
++ 标准的 Java 类库不支持
++ 已经用另一种语言，比如说 C/C++ 编写了一个类库，如何用 Java 代码调用呢？
++ 某些运行次数特别多的方法，为了加快性能，需要用更接近硬件的语言（比如汇编）编写
+
+使用
++ 编写带有 native 方法的 Java 类， `javac` 生成.class 文件；
++ 使用 `javah -jni `j生成扩展名为 h 的头文件
++ 实现本地方法，并生成动态链接库
+
+
+```java
+public class JNI {
+    static {
+        System.loadLibrary("xx"); // 加载名为 xxx 的动态链接库
+    }
+    // 定义本地方法
+    private native void test();
+}
+```
