@@ -2,6 +2,9 @@
 + [C++选手提前批/秋招可投岗位](https://github.com/ESwordCn/Cpper_0ffers)
 + [【师哥内推】2024校招网申信息实时汇总](https://docs.qq.com/sheet/DSUtsUVFLYnNSVnhC?tab=BB08J2)
 
+# 简历
++ [OpenResume is a powerful open-source resume builder and resume parser.](https://github.com/xitanggg/open-resume)
+
 # 复习网站
 
 ## 算法
