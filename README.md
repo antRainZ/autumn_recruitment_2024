@@ -72,3 +72,70 @@
 + [2020 届互联网秋季校园招聘汇总 (2019年秋)](https://abelsu7.top/2019/07/28/2019-autumn-offer/)
 
 
+# 参考链接
++ [免费的 IT 类在线书籍](https://github.com/ztoiax/notes/blob/master/books.md)
+  + [About Learning Vim and Vimscript doesn't have to be hard. ](https://github.com/iggredible/Learn-Vim)
+
+# 书籍
+
+## c
++ c 语言程序设计现代方法
++ c 专家编程
++ c 和 指针
+
+## c++
++ 深度探索 C++ 对象模型
++ 提高C++性能的编程技术
+
+## 算法
++ 剑指offer
+
+## 设计模式
++ 大话设计模式
++ 图解设计模式
++ 大规模 C++ 程序设计
++ C++ API 设计
+
+## 编译
++ 程序员的自我修养：链接、装载与库
++ 老码识途：从机器码到框架的系统观逆向修炼之路
++ 汇编语言
++ C++反汇编与逆向分析技术揭秘
++ Linux 二进制分析
+
+## Linux
++ 《Linux 就是这个范儿》
++ 《鸟哥的 Linux 私房菜基础篇》
++ 《鸟哥的Linux私房菜服务器架设篇》
++ 《Linux 系统编程》
++ Linux 高性能服务器编程
+
+## mysql
++ 《高性能 MySQL》
++ 《MySQL 排错指南》
++ 《数据库索引设计与优化》
+
+## 网络编程
++ C++ 服务器开发精髓
++ TCP/IP 网络编程
++ Linux 高性能服务器编程
+
+### 网络
++ 《网络是怎样连接的》
++ 《图解HTTP》
++ 《图解TCP/IP》
++ 《计算机网络自顶向下》
+
+## 代码风格与习惯
++ 代码整洁之道
++ 程序设计实践
++ 重构 改善既有代码的设计
++ Google C++编程风格指南
+
+## 简写
+LDD3          Linux Device Driver 3rd
+LKD3          Linux Kernel Development 3rd
+ULK3          Understanding the Linux Kernel 3rd
+PLKA          Professional Linux Kernel Architecture
+UML            User Mode Linux
+Intel V3       Intel? 64 and IA-32 Architectures Software Developer’s Manual  Volume 3 (3A, 3B & 3C): System Programming Guide
