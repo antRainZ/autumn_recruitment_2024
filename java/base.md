@@ -390,3 +390,9 @@ public class JNI {
     private native void test();
 }
 ```
+
+# IO
++ 字节流
++ 字符流
++ 缓存流
++ 对象流
